@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
-import Navbar from "../components/layout/Navbar";
-import SearchBar from "../components/layout/SearchBar";
 import EventCard from "../components/event/EventCard";
-import Footer from "../components/layout/Footer";
 import serviceApi from "../services/serviceApi";
+import SearchSection from "../components/layout/SearchSection";
+import SearchBar from "../components/layout/SearchBar";
 
 
 const HomePage = () => {
@@ -38,26 +37,30 @@ const HomePage = () => {
 
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [locationSearchTerm, setLocationSearchTerm] = useState("");
 
     const filteredEvents = events.filter(event =>
-        event.description.toLowerCase().includes(searchTerm.toLowerCase())
+        event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.location.toLowerCase().includes(locationSearchTerm.toLowerCase())
     );
+
 
     const handleSearch = (term) => {
         setSearchTerm(term);
     };
+    const handleLocationSearch = (term) => {
+        setLocationSearchTerm(term);
+    };
     if (loading) return <p>Loading events...</p>;
     if (error) return <p>{error}</p>;
     return (
-        <div>
-            <Navbar/>
-            <SearchBar onSearch={handleSearch}/>
+        <div className="App">
+            <SearchSection onSearch={handleSearch} onLocationSearch={handleLocationSearch}/>
             <div className="event-grid">
                 {filteredEvents.map(event => (
                     <EventCard key={event.id} {...event} />
                 ))}
             </div>
-            <Footer/> {/* Add Footer here */}
         </div>
     );
 };

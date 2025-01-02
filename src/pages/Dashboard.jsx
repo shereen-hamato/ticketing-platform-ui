@@ -1,12 +1,21 @@
 import React from "react";
-import LogoutButton from "../components/layout/LogoutButton";
+import Hero from "../components/layout/Hero";
+import SearchSection from "../components/layout/SearchSection";
+import ExploreGroups from "../components/layout/ExploreGroups";
+import UpcomingEvents from "../components/layout/UpcomingEvents";
+import WhyTickify from "../components/layout/WhyTickify";
+import Newsletter from "../components/layout/Newsletter";
+
 
 const Dashboard = () => {
     return (
-        <div style={{ textAlign: "center", padding: "50px" }}>
-            <h1>Welcome to Tickify Dashboard</h1>
-            <p>You have successfully logged in!</p>
-            <LogoutButton />
+        <div className="App">
+            <Hero />
+            <SearchSection />
+            <ExploreGroups />
+            <UpcomingEvents />
+            <WhyTickify />
+            <Newsletter />
         </div>
     );
 };

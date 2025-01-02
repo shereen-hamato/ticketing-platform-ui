@@ -1,13 +1,17 @@
 import React from "react";
-
 const Footer = () => (
     <footer className="footer">
-        <p>&copy; 2024 Tickify. All rights reserved.</p>
-        <ul>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/terms">Terms</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-        </ul>
+        <div className="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+        <div className="social-icons">
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
     </footer>
 );
 
