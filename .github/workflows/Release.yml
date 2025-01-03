@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     name: Test and lint
-    uses: ./ticketing-platform-ui/.github/workflows/development.yml@main
+    uses: ticketing-platform-ui/.github/workflows/development.yml@master
 
   docker:
     name: Build container
