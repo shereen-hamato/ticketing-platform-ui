@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     name: Test and lint
-    uses: ./.github/workflows/development.yml@master
+    uses: ./.github/workflows/development.yml
 
   docker:
     name: Build container
