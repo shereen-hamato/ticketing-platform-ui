@@ -4,6 +4,7 @@ const CheckoutPage = () => (
     <div>
         <h1>Checkout</h1>
         <p>Order summary and payment options will be displayed here.</p>
+        <p>Order summary and payment options will be displayed here.</p>
     </div>
 );
 
